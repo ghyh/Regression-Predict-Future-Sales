@@ -1,5 +1,6 @@
 # Regression-Predict-Future-Sales
 
+### Comparison between Algorithms ###
 | Algorithm | Score |
 |---|---|
 |Lasso with CV|6.2e-3|
