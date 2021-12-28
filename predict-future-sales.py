@@ -22,6 +22,8 @@ test_data = pd.read_csv("/kaggle/input/competitive-data-science-predict-future-s
 shops = pd.read_csv("/kaggle/input/competitive-data-science-predict-future-sales/shops.csv")
 items = pd.read_csv("/kaggle/input/competitive-data-science-predict-future-sales/items.csv")
 
+training_data.describe()
+
 # Identify outliers
 # Ref: https://www.kaggle.com/gordotron85/future-sales-xgboost-top-3
 import matplotlib.pyplot as plt
@@ -32,7 +34,7 @@ plt.xlim(-50,2500)
 # Figure for item_cnt_day
 plt.boxplot(x=training_data.item_cnt_day,flierprops={'marker':'x','markersize':6},vert=False)
 
-# Firgure for item_price
+# Figure for item_price
 plt.figure(figsize=(9,5))
 plt.xlim(training_data.item_price.min(),training_data.item_price.max()*1.5)
 plt.boxplot(x=training_data.item_price,flierprops={'marker':'x','markersize':6},vert=False)
