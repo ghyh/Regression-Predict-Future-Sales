@@ -25,16 +25,25 @@ The probability distribution of 'item_cnt_day' (the monthly sale number) grouped
 |<ul><li>skewness: 16.02</li><li>kurtosis: 576.34</li></ul>|<ul><li>skewness: 2.05</li><li>kurtosis: 5.49</li></ul>|
 
 ## Machine Learning Model
+To predict the future sale, a few Machine Learning algorithms have been picked for regressional training, including two linear ones (Ridge and Lasso with CV), Polynomial regression, K-nearest Neighbors (KNN) algorithm, and Extreme Gradient Boosting (XGBoost)[2]. Linear regression models are picked as the baseline model because of the simplicity. Non-linear algorithms are also added to the inventory as linear models cannot account for enough variation to provide a better model.
+For KNN, several iteration of fitting against different neighbor numbers have been run to determine the best number of neighbor (shown below), where R^2 (coefficient of determination) has been used as the metrics.   
+![knn_comparison](https://user-images.githubusercontent.com/30448897/147640005-798b1bce-d0b6-4493-9a55-b338044d070f.png)   
+Similarly, for Polynomial regression, multiple iterations have been run to determine the number of degree which can account for the largest variation, as shown below.    
+![poly_comparison](https://user-images.githubusercontent.com/30448897/147640078-b70a91c5-e522-4c12-beda-3fdd28d630ce.png)   
 
 ## Results and Discussion ##
-| Algorithm for Regression | R^2 (coefficient of determination)| Submission Score |
+The features 'shop_id' and 'item_id' in training data as the independent variables while using 'item_cnt_day' as the dependent variable, without further feature engineering. The test set also contains the features 'shop_id' and 'item_id'.   
+The results obtained from various algorithm are summarized in the table below. One can find the trend that in general, high the R^2 is, the lower the score (Root Mean Square Error, RMSE) is, except the KNN model. This trend is expected as the original training data is really scattered, so the model that can account for larger portion of variation should be a better model. (The current models are still distant away from overfitting) The summary suggests that XGBoost algorithm can provide the best model in this problem.      
+| Algorithm for Regression | R^2 (coefficient of determination)| Submission Score (RMSE) |
 |---|---|---|
 |Lasso with CV|6.2e-3|2.119|
 |Ridge with CV|6.3e-3|2.118|
-|Polynomial Regression|1.4e-2|2.0851|
-|KNN|3.7e-1|2.150|
+|Polynomial Regression (Degree=4)|1.4e-2|2.0851|
+|KNN (N=8)|3.7e-1|2.150|
 |XGBoost|2.9e-1|2.023|
+
+The assumption behind the reasion why KNN devaites from the trend is that the two input features, 'shop_id' and 'item_id' are not meaningful feature, i.e. one can replace the current shop_id or item_id with any numerical value, so when KNN tries to minimize distance between any given output data point, a new pair of shop_id and item_id could generate a extreme value with large contribution to RMSE.
 
 ## Reference ##
 1. Predict Future Sales https://www.kaggle.com/c/competitive-data-science-predict-future-sales 
-2. 
+2. XGBoost https://www.nvidia.com/en-us/glossary/data-science/xgboost/
