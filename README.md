@@ -23,11 +23,11 @@ The correlation between the features in the engineered training data is shown be
 ## Results and Discussion ##
 | Algorithm for Regression | R^2 (coefficient of determination)| Submission Score |
 |---|---|---|
-|Lasso with CV|6.2e-3|2.11932|
-|Ridge with CV|6.3e-3||
-|Polynomial Regression|1.4e-2||
-|KNN|3.7e-1|2.14950|
-|XGBoost|2.9e-1|2.02309|
+|Lasso with CV|6.2e-3|2.119|
+|Ridge with CV|6.3e-3|2.118|
+|Polynomial Regression|1.4e-2|2.0851|
+|KNN|3.7e-1|2.150|
+|XGBoost|2.9e-1|2.023|
 
 ## Reference ##
 1. Predict Future Sales https://www.kaggle.com/c/competitive-data-science-predict-future-sales 
