@@ -13,9 +13,16 @@ On the other hand, 'item_price' has an outlier at around 300000.
 ### Data Engineering ###
 After removing the outliers, there are 6 duplicate entries identified, and I discard them as the trainging set is large enough (more than 2.9M entries). The negative sale numbers (i.e. returns) are set to 0 to simplify the further reading of the result.
 To study the accumulated sale numbers, the daily sale numbers for each product are summed up and grouped by shop and month, i.e. we obtain a new feature, the monthly sales number, for each product. The item_price for each aggregated sale number is replaced by the mean of prices.
-### Data Profiling ###
-The correlation between the features in the engineered training data is shown below, and we can see that there is no significant correlation between each feature.   
-![heatmap](https://user-images.githubusercontent.com/30448897/147605169-64ebda1b-7b69-48d4-ba70-2bd1eabcc08c.png)
+### Data Visualization ###
+The correlation between the features in the engineered training data is shown below, and we can fiind no significant correlation between each feature.   
+![heatmap](https://user-images.githubusercontent.com/30448897/147605169-64ebda1b-7b69-48d4-ba70-2bd1eabcc08c.png)   
+The trend of sale numbers across the months in data set for each shop is also shown below. Due to the large number of shops, the figure doesn't seem to provide much trend or correlation among shops, but two peaks of sales around month 11 and 23 can still be identified.     
+![trend](https://user-images.githubusercontent.com/30448897/147621197-3eaacc27-f537-411a-8fc1-27b386745743.png)   
+The skewness and kurtosis of the probability distribution of 'item_cnt_day' (the monthly sale number) grouped by 'item_id' and 'shop_id', as shown below.
+| item_id | shop_id |
+|---|---|
+|![dataprofile1](https://user-images.githubusercontent.com/30448897/147623015-b4930e32-9741-433a-9991-d9035c2e4577.png)|![dataprofile2](https://user-images.githubusercontent.com/30448897/147623025-c7be18f8-f5e1-4e50-ab78-820ce56bc044.png)|   
+
 
 
 ## Machine Learning Model
