@@ -18,12 +18,11 @@ The correlation between the features in the engineered training data is shown be
 ![heatmap](https://user-images.githubusercontent.com/30448897/147605169-64ebda1b-7b69-48d4-ba70-2bd1eabcc08c.png)   
 The trend of sale numbers across the months in data set for each shop is also shown below. Due to the large number of shops, the figure doesn't seem to provide much trend or correlation among shops, but two peaks of sales around month 11 and 23 can still be identified.     
 ![trend](https://user-images.githubusercontent.com/30448897/147621197-3eaacc27-f537-411a-8fc1-27b386745743.png)   
-The skewness and kurtosis of the probability distribution of 'item_cnt_day' (the monthly sale number) grouped by 'item_id' and 'shop_id', as shown below.
+The probability distribution of 'item_cnt_day' (the monthly sale number) grouped by 'item_id' and 'shop_id', as shown below, and their skewness and kurtosis are summarized in the table.
 | item_id | shop_id |
 |---|---|
-|![dataprofile1](https://user-images.githubusercontent.com/30448897/147623015-b4930e32-9741-433a-9991-d9035c2e4577.png)|![dataprofile2](https://user-images.githubusercontent.com/30448897/147623025-c7be18f8-f5e1-4e50-ab78-820ce56bc044.png)|   
-
-
+|![dataprofile1](https://user-images.githubusercontent.com/30448897/147623015-b4930e32-9741-433a-9991-d9035c2e4577.png)|![dataprofile2](https://user-images.githubusercontent.com/30448897/147623025-c7be18f8-f5e1-4e50-ab78-820ce56bc044.png)|
+| skewness: 16.02   kurtosis: 576.34| skewness: 2.05   kurtosis: 5.49|
 
 ## Machine Learning Model
 
