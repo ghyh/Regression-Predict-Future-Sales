@@ -42,7 +42,7 @@ The results obtained from various algorithm are summarized in the table below. O
 |KNN (N=8)|3.7e-1|2.150|
 |XGBoost|2.9e-1|2.023|
 
-The assumption behind the reasion why KNN devaites from the trend is that the two input features, 'shop_id' and 'item_id' are not meaningful feature, i.e. one can replace the current shop_id or item_id with any numerical value, so when KNN tries to minimize distance between any given output data point, a new pair of shop_id and item_id could generate a extreme value with large contribution to RMSE.
+The assumption behind the reason why KNN devaites from the trend is that the two input features, 'shop_id' and 'item_id' are not meaningful feature, i.e. one can replace the current shop_id or item_id with any numerical value, so when KNN tries to minimize distance between any given output data point, a new pair of shop_id and item_id could generate a extreme value with large contribution to RMSE.
 
 ## Reference ##
 1. Predict Future Sales https://www.kaggle.com/c/competitive-data-science-predict-future-sales 
