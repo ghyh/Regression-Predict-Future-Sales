@@ -131,13 +131,17 @@ plt.style.use('fivethirtyeight')
 plt.figure(figsize=(12,7))
 a=training_data_grouped.groupby('item_id')['item_cnt_day'].sum().reset_index()
 b=training_data_grouped.groupby('shop_id')['item_cnt_day'].sum().reset_index()
+#print(a)
 print('skew {}'.format(a.item_cnt_day.skew()))
 print('kurt {}'.format(a.item_cnt_day.kurt()))
-sns.displot(data=a,x='item_cnt_day',bins=5)
+sns.barplot(data=a,x='item_id',y="item_cnt_day")
+plt.show()
 
+#print(b)
 print('skew {}'.format(b.item_cnt_day.skew()))
 print('kurt {}'.format(b.item_cnt_day.kurt()))
-sns.displot(data=b,x='item_cnt_day',bins=5)
+sns.barplot(data=b,x='shop_id',y='item_cnt_day')
+plt.show()
 
 ## Model Building
 # build model using RidgeCV 
